@@ -11,7 +11,7 @@ const App = () => {
   const [notifications, setNotifications] = useState([]);
 
   const runEvent = () => {
-    const socket = io("http://localhost:3005", { transports: ["websocket"] });
+    const socket = io("https://notification-rjy5.onrender.com", { transports: ["websocket"] });
     socket.emit("new_user_login", { message: "user have logged" });
   };
 
@@ -52,7 +52,7 @@ const App = () => {
   useEffect(() => {
     requestNotificationPermission();
 
-    const socket = io("http://localhost:3005", { transports: ["websocket"] });
+    const socket = io("https://notification-rjy5.onrender.com", { transports: ["websocket"] });
     socket.on("connect", () => {
       console.log("connected to socket io");
     });
